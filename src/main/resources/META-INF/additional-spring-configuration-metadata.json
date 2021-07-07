@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "sizeoff.jwt.secret",
+      "type": "java.lang.String",
+      "description": "JWT common security key for all services"
+    }
+  ]
+}
