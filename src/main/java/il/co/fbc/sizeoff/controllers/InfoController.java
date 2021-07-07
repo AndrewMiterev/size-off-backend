@@ -112,7 +112,7 @@ public class InfoController {
             @ApiResponse(responseCode = "403", description = "Forbidden")
     })
     public LocalDateTime getTimeStamp() {
-        log.trace("Request timestamp of jobs");
+        log.trace("Request timestamp of servers infos");
         return service.getLastUpdate();
     }
 }

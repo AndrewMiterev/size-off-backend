@@ -52,7 +52,6 @@ public class UserController {
             @ApiResponse(responseCode = "401", description = "Unauthorized")
     })
     public AuthenticationResponseDTO loginUser(@Valid @RequestBody AuthenticationRequestDTO dto, HttpServletRequest request) {
-
 //        sleep("login", 1000);
         var authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getPassword()));

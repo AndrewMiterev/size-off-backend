@@ -30,8 +30,6 @@ import static il.co.fbc.sizeoff.common.Constants.*;
 @Slf4j
 @RequiredArgsConstructor
 // todo validator springfox-bean-validators https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
-// todo swagger
-// todo rewrite info controller and user controller by example of job controller
 
 //@ApiResponses(value = {
 //        @ApiResponse(code = 400, message = "Bad Request", response = ErrorDTO.class),
@@ -54,7 +52,7 @@ public class JobController {
     void add(@Size(min = 6, message = "server name must be minimum {min} symbols")
              @Size(max = 20, message = "server name must be maximum {max} symbols")
              @RequestParam String name) {
-        log.trace("add job for {}", name);
+        log.debug("add job for {}", name);
         service.add(name);
     }
 
@@ -70,7 +68,7 @@ public class JobController {
     void delete(@Size(min = 6, message = "server name must be minimum {min} symbols")
                 @Size(max = 20, message = "server name must be maximum {max} symbols")
                 @RequestParam String name) {
-        log.trace("Delete job {}", name);
+        log.debug("Delete job {}", name);
         service.delete(name);
     }
 
