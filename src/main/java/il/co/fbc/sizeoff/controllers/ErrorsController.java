@@ -2,7 +2,7 @@ package il.co.fbc.sizeoff.controllers;
 
 import il.co.fbc.sizeoff.common.exception.UnauthorizedException;
 import il.co.fbc.sizeoff.common.exception.ForbiddenException;
-import il.co.fbc.sizeoff.common.tools.NonCriticException;
+import il.co.fbc.sizeoff.common.exception.NonCriticException;
 import il.co.fbc.sizeoff.controllers.dto.ErrorDTO;
 import il.co.fbc.sizeoff.controllers.dto.ErrorLineDTO;
 import lombok.extern.slf4j.Slf4j;

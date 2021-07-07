@@ -1,6 +1,6 @@
 package il.co.fbc.sizeoff.services.impl;
 
-import il.co.fbc.sizeoff.common.tools.NonCriticException;
+import il.co.fbc.sizeoff.common.exception.NonCriticException;
 import il.co.fbc.sizeoff.domain.entities.Job;
 import il.co.fbc.sizeoff.domain.repo.JobRepository;
 import il.co.fbc.sizeoff.interfaces.JobService;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class JobServiceImpl implements JobService {
     private final JobRepository repository;
-    private final AtomicReference<LocalDateTime> stampUpdate = new AtomicReference<LocalDateTime>();
+    private final AtomicReference<LocalDateTime> stampUpdate = new AtomicReference<>();
 
     @PostConstruct
     private void postConstruct() {

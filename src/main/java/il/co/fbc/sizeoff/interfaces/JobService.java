@@ -16,8 +16,3 @@ public interface JobService {
     void deleteOld(int hoursToExpire);
     LocalDateTime getLastUpdate();
 }
-
-// todo implementation
-// todo repository
-// todo scheduler for clear
-// todo DTO

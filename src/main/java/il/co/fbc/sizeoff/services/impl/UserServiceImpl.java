@@ -1,6 +1,6 @@
 package il.co.fbc.sizeoff.services.impl;
 
-import il.co.fbc.sizeoff.common.tools.NonCriticException;
+import il.co.fbc.sizeoff.common.exception.NonCriticException;
 import il.co.fbc.sizeoff.domain.repo.UserRepository;
 import il.co.fbc.sizeoff.interfaces.UserService;
 import il.co.fbc.sizeoff.mapper.MapUserBo2UserEntity;
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
     final private MapUserEntity2UserBo mapper2Bo;
     final private PasswordEncoder encoder;
     final private Environment environment;
-    private final AtomicReference<LocalDateTime> stampUpdate = new AtomicReference<LocalDateTime>();
+    private final AtomicReference<LocalDateTime> stampUpdate = new AtomicReference<>();
 
     @PostConstruct
     private void init() {

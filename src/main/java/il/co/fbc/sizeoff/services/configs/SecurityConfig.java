@@ -107,10 +107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             return;
         }
 
-        log.info("Redirected social user create: {} provider: {} name: {} email: {} remote address: {}", create, provider, name, email, remoteAddress);
-
-//        var aaa = CommonOAuth2Provider.GOOGLE.getBuilder("google").build();
-//        log.info("{}", aaa);
+        log.debug("Redirected social user create: {} provider: {} name: {} email: {} remote address: {}", create, provider, name, email, remoteAddress);
 
         if (create) {
             log.info("Create new social user {} {} from {}", name, email, provider);
@@ -125,7 +122,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         try {
             userDetails = userDetailsService.loadUserByUsername(email);
         } catch (Exception e) {
-            log.info("Social user {} error {}", email, e.getMessage());
+            log.warn("Social user {} error {}", email, e.getMessage());
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.getWriter().write(mapper.writeValueAsString(
                     SocialResponseDTO.builder()
@@ -174,8 +171,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private void logout(HttpServletRequest request, HttpServletResponse response,
                         Authentication authentication) {
         log.warn("logout");
-        // token processing
-        System.out.println("Auth token is - " + request.getHeader("Authorization"));
+        // todo token processing
+        log.error("doesn't implemented {}", request.getHeader("Authorization"));
     }
 
     void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response,
